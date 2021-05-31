@@ -18,21 +18,19 @@ const addBookToLibrary = (title, author, pages, haveRead) => {
 
 addBookToLibrary('The Hobbit', 'J.R.R.Tolkien', 255, true)
 addBookToLibrary('Catch 22', 'Joseph Heller', 255, false)
-console.log(myLibrary);
 const generateLibrary = (library) => {
   library.forEach(book => {
-    console.log(book);
-    const bookElement = document.createElement('div');
-    console.log(bookElement);
+    const bookElement = document.createElement('div')
     document.body.appendChild(bookElement);
-    const bookTitle = document.bookElement.createElement('h3');
+    const bookTitle = document.createElement('h3');
     bookTitle.innerHTML = book.title;
-    const bookPages = document.bookElement.createElement('p');
-    bookTitle.innerHTML = book.pages;
-    const bookRead = document.bookElement.createElement('input');
-    bookRead = book.haveRead;
-    document.bookElement.appendChild(bookTitle, bookPages, bookRead);
-    
+    bookElement.appendChild(bookTitle)
+    const bookPages = document.createElement('p');
+    bookPages.innerHTML = book.pages;
+    bookElement.appendChild(bookPages);
+    const bookRead = document.createElement('input');
+    bookRead.innerHTML = book.haveRead;
+    bookElement.appendChild(bookRead)
   })
 }
 
